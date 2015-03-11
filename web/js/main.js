@@ -2,10 +2,10 @@
 
 var benchmark = require('vdom-benchmark-base');
 var React = require('react/lib/React');
-var DOM = React.DOM;
+var createElement = React.createElement;
 
 var NAME = 'React';
-var VERSION = '0.12.2';
+var VERSION = '0.13.0';
 
 function renderTree(nodes) {
   var children = [];
@@ -16,9 +16,9 @@ function renderTree(nodes) {
   for (i = 0; i < nodes.length; i++) {
     n = nodes[i];
     if (n.children !== null) {
-      children.push(DOM.div({key: n.key}, renderTree(n.children)));
+      children.push(createElement('div', {key: n.key}, renderTree(n.children)));
     } else {
-      children.push(DOM.span({key: n.key}, n.key.toString()));
+      children.push(createElement('span', {key: n.key}, n.key.toString()));
     }
   }
 
@@ -39,11 +39,11 @@ BenchmarkImpl.prototype.tearDown = function() {
 };
 
 BenchmarkImpl.prototype.render = function() {
-  React.render(DOM.div(null, renderTree(this.a)), this.container);
+  React.render(createElement('div', null, renderTree(this.a)), this.container);
 };
 
 BenchmarkImpl.prototype.update = function() {
-  React.render(DOM.div(null, renderTree(this.b)), this.container);
+  React.render(createElement('div', null, renderTree(this.b)), this.container);
 };
 
 document.addEventListener('DOMContentLoaded', function(e) {
