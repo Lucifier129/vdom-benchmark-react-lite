@@ -22,7 +22,7 @@
     "react"
   ],
   "dependencies": {
-    "react": "^0.13.0",
+    "react": "^0.13.1",
     "vdom-benchmark-base": "^0.2.2"
   },
   "devDependencies": {

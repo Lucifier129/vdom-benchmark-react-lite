@@ -5,7 +5,7 @@ var React = require('react/lib/React');
 var createElement = React.createElement;
 
 var NAME = 'React';
-var VERSION = '0.13.0';
+var VERSION = '0.13.1';
 
 function renderTree(nodes) {
   var children = [];
