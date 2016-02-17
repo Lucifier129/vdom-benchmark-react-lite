@@ -17,7 +17,11 @@ gulp.task('build', function(callback) {
       filename: 'bundle.js'
     },
     resolve: {
-      extensions: ['', '.js', '.jsx']
+      extensions: ['', '.js', '.jsx'],
+      alias: {
+        react: 'react-lite',
+        'react-dom': 'react-lite'
+      }
     },
     module: {
       loaders: [{
@@ -30,7 +34,7 @@ gulp.task('build', function(callback) {
       new webpack.NoErrorsPlugin(),
       new webpack.DefinePlugin({'process.env': {NODE_ENV: JSON.stringify('production')}}),
       new webpack.optimize.DedupePlugin(),
-      new webpack.optimize.UglifyJsPlugin()
+      // new webpack.optimize.UglifyJsPlugin()
     ]
   };
 
