@@ -66,8 +66,8 @@
 	var benchmark = __webpack_require__(3);
 
 
-	var NAME = 'React';
-	var VERSION = '0.14.6';
+	var NAME = 'React-lite';
+	var VERSION = '0.0.23';
 
 	function renderTree(nodes) {
 	  var children = [];
