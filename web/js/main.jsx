@@ -3,7 +3,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 
 var NAME = 'React-lite';
-var VERSION = '0.0.23';
+var VERSION = '0.15.0';
 
 function renderTree(nodes) {
   var children = [];
