@@ -24,7 +24,7 @@
   "dependencies": {
     "react": "^0.14.6",
     "react-dom": "^0.14.6",
-    "react-lite": "^0.15.0",
+    "react-lite": "^0.15.2",
     "vdom-benchmark-base": "^0.2.4"
   },
   "devDependencies": {
