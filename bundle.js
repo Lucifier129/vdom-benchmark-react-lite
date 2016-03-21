@@ -129,7 +129,7 @@
 /***/ function(module, exports) {
 
 	/*!
-	 * react-lite.js v0.15.4
+	 * react-lite.js v0.15.5
 	 * (c) 2016 Jade Gu
 	 * Released under the MIT License.
 	 */
@@ -1605,15 +1605,6 @@
 
 	function createElement(type, props, children) {
 		var createVnode = null;
-		var argsLen = arguments.length;
-
-		if (argsLen > 3) {
-			children = Array(argsLen - 2);
-			for (var i = 2; i < argsLen; i++) {
-				children[i - 2] = arguments[i];
-			}
-		}
-
 		var varType = typeof type;
 
 		if (varType === 'string') {
@@ -1661,8 +1652,18 @@
 			}
 		}
 
-		if (children !== undefined) {
-			finalProps.children = children;
+		var argsLen = arguments.length;
+		var finalChildren = children;
+
+		if (argsLen > 3) {
+			finalChildren = Array(argsLen - 2);
+			for (var i = 2; i < argsLen; i++) {
+				finalChildren[i - 2] = arguments[i];
+			}
+		}
+
+		if (finalChildren !== undefined) {
+			finalProps.children = finalChildren;
 		}
 
 		var vnode = createVnode(type, finalProps);
