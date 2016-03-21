@@ -67,7 +67,7 @@
 
 
 	var NAME = 'React-lite';
-	var VERSION = '0.15.4';
+	var VERSION = '0.15.5';
 
 	function renderTree(nodes) {
 	  var children = [];
